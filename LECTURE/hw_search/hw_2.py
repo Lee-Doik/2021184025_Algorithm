@@ -1,4 +1,7 @@
+#from unsorted import numbers
 from sorted import numbers
+
+#numbers.sort()
 
 to_find = [
   5378654,1096519,2575130,7912393,8847484,1391621,9669847,2030367,
@@ -13,7 +16,30 @@ to_find = [
   6061374,6422378,4594699,9529062,5251684,4065461,6072650,    289
 ]
 
-length = len(numbers)
-left = 0 
-right = length-1
+def binary_search(array, target, start, end):
 
+  found = False
+  while start <= end:
+
+        mid = (start + end) // 2
+
+        if array[mid] == target:
+          found = True
+          print("%d at #%d" % (target, mid))
+          break
+
+        elif array[mid] > target:
+            end = mid - 1
+
+        else:
+            start = mid + 1
+            
+  if not found: print("%d Not found" % target)
+
+for target in to_find:
+
+  Length = len(numbers)
+  start = 0
+  end = Length-1
+
+  binary_search(numbers, target, start, end)
