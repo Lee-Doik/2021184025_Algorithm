@@ -16,7 +16,7 @@ def heapify(root, size):
 
 
 def main():
-  print('before:', array)
+  #print('before:', array)
   count = len(array)
 
   last_parent_index = count // 2 - 1
@@ -29,7 +29,7 @@ def main():
     heapify(0, last_sort_index)
     last_sort_index -= 1
 
-  print('after :', array)
+  #print('after :', array)
 
 if __name__ == '__main__':
 
@@ -73,6 +73,6 @@ if __name__ == '__main__':
     startedOn = time()
     main()
     elapsed = time() - startedOn
-    print(f'Elapsed time = {elapsed:.3f}s')
 
+  print(array)
   exit() 
