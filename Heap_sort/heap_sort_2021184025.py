@@ -1,6 +1,3 @@
-from random import randint, seed, shuffle
-from time import time
-
 def heapify(root, size):
   lc = root * 2 + 1
   if lc >= size: return
@@ -16,7 +13,6 @@ def heapify(root, size):
 
 
 def main():
-  #print('before:', array)
   count = len(array)
 
   last_parent_index = count // 2 - 1
@@ -28,8 +24,6 @@ def main():
     array[0], array[last_sort_index] = array[last_sort_index], array[0] 
     heapify(0, last_sort_index)
     last_sort_index -= 1
-
-  #print('after :', array)
 
 if __name__ == '__main__':
 
@@ -70,9 +64,7 @@ if __name__ == '__main__':
 
   for word in words:
     array = words
-    startedOn = time()
     main()
-    elapsed = time() - startedOn
 
   print(array)
   exit() 
