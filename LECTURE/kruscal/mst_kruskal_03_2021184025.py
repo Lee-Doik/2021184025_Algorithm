@@ -4,7 +4,7 @@ edges = [
 (0, 6, 194), (0, 7, 59), (0, 9, 372), (1, 11, 125), (2, 4, 345), 
 (2, 8, 246), (2, 9, 293), (2, 10, 166), (4, 8, 82), (4, 10, 164), 
 (5, 6, 119), (5, 7, 232), (6, 7, 169), (8, 9, 286), (8, 10, 193), 
-(9, 10, 150) ]
+(9, 10, 150), (3, 4, 100), (3, 8, 200), (1, 5, 150), (5, 11, 250) ]
 
 
 sorted_edges = sorted(edges, key = lambda e:e[2])
@@ -24,13 +24,17 @@ def union(u,v):
 	roots[vr] = ur
 
 n_edges = len(edges)
+total_weight = 0
 for current_edge_index in range(n_edges):
 	u, v, w = sorted_edges[current_edge_index]
-	mst.append((u, v, w))
-	if u == v:
+	ur = find_root(u)
+	vr = find_root(v)
+	if ur == vr:
 		continue
-		
+	mst.append((u, v, w))
+	union(u, v)
+	total_weight += w	
 	if len(mst) >= n_vertices - 1: break
 
 
-print(f"mst = {mst}")
+print(f"mst = {mst} \nTotal Weight : {total_weight}")
