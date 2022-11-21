@@ -14,14 +14,14 @@ for u, v, w in edges:
 	g[u][v] = w
 	g[v][u] = w
 
-# def print_adj_matrix():
-#   for u in range(n_vertices):
-#     for v in range(n_vertices):
-#       w = g[u][v] if v in g[u] else 0
-#       print(f'{w:5d}', end='')
-#     print()
-#   print()
-# print_adj_matrix()
+def print_adj_matrix():
+  for u in range(n_vertices):
+    for v in range(n_vertices):
+      w = g[u][v] if v in g[u] else 0
+      print(f'{w:5d}', end='')
+    print()
+  print()
+print_adj_matrix()
 
 D = heapdict()			# 거리만 저장함. key = 정점인덱스, value = 가중치
 origins = dict()		# 어디로부터 왔는지 알 수있는 정보 key = 정점, value = 어디서 왔는지
