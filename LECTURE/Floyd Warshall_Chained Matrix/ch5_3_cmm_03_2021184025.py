@@ -17,7 +17,7 @@ def cmm(sizes):
   C = questions
   P = [[0 for x in range(mc)] for x in range(mc)]
   for sub in range(2, mc + 1):
-    for s in range(1, mc - sub + 1):q
+    for s in range(1, mc - sub + 1):
       e = s + sub - 1
       P[s][e] = float('inf')
       for k in range(s, e + 1):
